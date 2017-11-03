@@ -45,14 +45,12 @@ public class NormalLonelyTweet implements Serializable {
 		tweetBody = (String) in.readObject();
 	}
 
+	// *LAB FIX* if statement simplified
 	public boolean isValid() {
-		if (tweetBody.trim().length() == 0
-				|| tweetBody.trim().length() > 10) {
-			return false;
-		}
+        return !(tweetBody.trim().length() == 0
+                || tweetBody.trim().length() > 10);
 
-		return true;
-	}
+    }
 
 	@Override
 	public String toString() {
